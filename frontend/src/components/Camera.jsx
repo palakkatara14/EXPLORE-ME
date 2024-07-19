@@ -70,7 +70,8 @@ const Camera = () => {
   const handleContinue = async () => {
     setIsLoading(true); // Start loading
     try {
-      const response = await fetch('http://localhost:5000/upload-image', {
+      // const response = await fetch('http://localhost:5000/upload-image', {
+        const response = await fetch('https://exploreme-v2-2.onrender.com/upload-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -104,7 +105,8 @@ const Camera = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/save-image', {
+      // const response = await fetch('http://localhost:5000/save-image', {
+        const response = await fetch('https://exploreme-v2-2.onrender.com/save-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
