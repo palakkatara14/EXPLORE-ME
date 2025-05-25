@@ -43,8 +43,8 @@ const Upload = () => {
     reader.onloadend = async () => {
       const base64String = reader.result.split(',')[1];
       try {
-       // const response = await fetch('http://localhost:5000/upload-image', {
-        const response = await fetch('https://exploreme-v2-2.onrender.com/upload-image', {
+       const response = await fetch('http://localhost:5000/upload-image', {
+      //const response = await fetch('https://exploreme-v2-2.onrender.com/upload-image', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -86,8 +86,8 @@ const Upload = () => {
     reader.onloadend = async () => {
       const base64String = reader.result.split(',')[1];
       try {
-        //const response = await fetch('http://localhost:5000/save-image', {
-          const response = await fetch('https://exploreme-v2-2.onrender.com/save-image', {
+        const response = await fetch('http://localhost:5000/save-image', {
+        //const response = await fetch('https://exploreme-v2-2.onrender.com/save-image', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ const Upload = () => {
           <img src={imagePreview} alt="Selected" width="600" height="400" />
           <button onClick={handleReupload}>Reupload</button>
           <button onClick={handleContinue} disabled={loading}>Continue</button>
-          {loading && <p>Loading...</p>} {/* Loading indicator */}
+          {loading && <p>Loading...</p>} {/* Loading indicator */ }
           {generatedText && <p style={{ color: 'white' , fontSize:'16px'}}>Generated Text: {generatedText}</p>}
           <div className="similar-images">
             {similarImages.length > 0 && (
@@ -151,3 +151,4 @@ const Upload = () => {
 };
 
 export default Upload;
+

@@ -21,8 +21,8 @@ const Logout = ({ email, password, onSetEmail, onSetPassword, onLogout }) => {
 
     const handleConfirmLogout = async () => {
         try {
-            //const response = await fetch('http://localhost:5000/logout', {
-                const response = await fetch('https://exploreme-v2-2.onrender.com/logout', {
+            const response = await fetch('http://localhost:5000/logout', {
+               // const response = await fetch('https://exploreme-v2-2.onrender.com/logout', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),

@@ -14,8 +14,8 @@ function Signup({ onSignupSuccess }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      //await axios.post('http://localhost:5000/signup', {
-        await axios.post('https://exploreme-v2-2.onrender.com/signup', {
+      await axios.post('http://localhost:5000/signup', {
+      //await axios.post('https://exploreme-v2-2.onrender.com/signup', {
       
         username,
         email,

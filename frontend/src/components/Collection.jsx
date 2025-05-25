@@ -13,8 +13,8 @@ const Collection = () => {
 
   const handleFetchCollection = async () => {
     try {
-      // const response = await axios.get('http://localhost:5000/collection', {
-        const response = await axios.get('https://exploreme-v2-2.onrender.com/collection', {
+      const response = await axios.get('http://localhost:5000/collection', {
+        //const response = await axios.get('https://exploreme-v2-2.onrender.com/collection', {
         params: { username: username },
       });
 

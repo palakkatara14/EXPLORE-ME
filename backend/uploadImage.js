@@ -1,19 +1,17 @@
-
-
-
-
-
-
 const express = require('express');
 const router = express.Router();
 const Photo = require('./db/imagestore');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 // Initialize GoogleGenerativeAI with your API key
-const genAI = new GoogleGenerativeAI('AIzaSyAVRquZtQ9_FcyIUy-nA0LM9SHGcoQ2Clo'); // Replace with your API key
+// const genAI = new GoogleGenerativeAI('AIzaSyAVRquZtQ9_FcyIUy-nA0LM9SHGcoQ2Clo'); // Replace with your API key
+//const genAI = new GoogleGenerativeAI('AIzaSyAhwUxrMywHbvz0MVWWtrcIWL8hS30qXXo');
+const genAI=new GoogleGenerativeAI('AIzaSyDouzqaNY9MAFMVSaRYkxY8lXT8fivoe30');
+//const genAI=new GoogleGenerativeAI('AIzaSyCVS_2ruZEfEfanCZU-6EPQU_2zuMJfw0A');
 
 // Unsplash API access key
-const unsplashAccessKey = 'miYvvB_AHjVSJ0MyLZURJbtmhSt1e3wXWOOyzbm7XkA'; // Replace with your actual Unsplash access key
+//const unsplashAccessKey = 'miYvvB_AHjVSJ0MyLZURJbtmhSt1e3wXWOOyzbm7XkA'; 
+const unsplashAccessKey = 'miYvvB_AHjVSJ0MyLZURJbtmhSt1e3wXWOOyzbm7XkA';// Replace with your actual Unsplash access key
 
 // Endpoint for uploading image
 router.post('/upload-image', async (req, res) => {
@@ -22,11 +20,11 @@ router.post('/upload-image', async (req, res) => {
     const contentType = req.body.contentType;
 
     // Generate text using Gemini AI API
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
-    const result = await model.generateContent([{
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const result = await model.generateContent(["Tell me something about this image", {
       inlineData: {
         data: imageBuffer.toString('base64'),
-        mimeType: contentType
+        mimeType: contentType,
       }
     }]);
 
@@ -67,3 +65,4 @@ router.post('/upload-image', async (req, res) => {
 });
 
 module.exports = router;
+
