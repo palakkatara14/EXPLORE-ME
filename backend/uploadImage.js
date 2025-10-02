@@ -20,7 +20,7 @@ router.post('/upload-image', async (req, res) => {
     const contentType = req.body.contentType;
 
     // Generate text using Gemini AI API
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     const result = await model.generateContent(["Tell me something about this image", {
       inlineData: {
         data: imageBuffer.toString('base64'),
